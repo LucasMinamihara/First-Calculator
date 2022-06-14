@@ -8,18 +8,53 @@ number.forEach((eachNumber) => {
   eachNumber.addEventListener("click", function () {
     display.innerHTML += Number(eachNumber.textContent);
     choiceNumber.push(Number(eachNumber.textContent));
-    if (choiceNumber.length > 0) {
-      let choiceNumberRange = choiceNumber.length;
-      console.log(choiceNumberRange);
-      // Need to create a new logical here to string each number of ChoiceNumber Array and then tranform it to a number again 
-      // but i will do it only if the user dont click on symbol, for example if click on minus button i will just agroup the array and do the calaculation with another number clicked by user.
-      for (let i = 0; i < choiceNumberRange.length; i++) {
-        console.log(choiceNumber[i]);
-        valueCalc += choiceNumber[i].toString;
-        console.log("i am here");
-      }
-      console.log(valueCalc);
-      console.log(choiceNumber);
-    }
+    console.log(choiceNumber);
   });
 });
+let equation = 1;
+let numberConc = "";
+let symbolClicked;
+let takingValues = [];
+const symbol = window.document
+  .querySelectorAll(".symbol")
+  .forEach((eachSymbol) => {
+    eachSymbol.addEventListener("click", function () {
+      symbolClicked = eachSymbol.textContent;
+      if (symbolClicked == "*") {
+        for (let i = 0; i < choiceNumber.length; i++) {
+          numberConc += String(choiceNumber[i]);
+        }
+        takingValues.push(numberConc);
+        numberConc = "";
+        choiceNumber = [];
+        multP(takingValues.length - 1);
+      }
+      if (symbolClicked == "+") {
+        for (let i = 0; i < choiceNumber.length; i++) {
+          numberConc += String(choiceNumber[i]);
+        }
+        takingValues.push(numberConc);
+        numberConc = "";
+        choiceNumber = [];
+        sum();
+      }
+      if (symbolClicked == "-") {
+        for (let i = 0; i < choiceNumber.length; i++) {
+          numberConc += String(choiceNumber[i]);
+        }
+        takingValues.push(numberConc);
+        numberConc = "";
+        choiceNumber = [];
+        minus();
+      }
+    });
+  });
+
+function multP(indexTakingValues) {
+  console.log(takingValues);
+  for (let i = 0; i < takingValues.length; i++) {
+    equation = takingValues[i] * equation;
+    console.log(equation);
+  }
+}
+console.log(equation);
