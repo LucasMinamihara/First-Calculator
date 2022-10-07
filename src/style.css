@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ef4444;
+}
+
+#containerCalculadora {
+  width: 350px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #7f1d1d;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+#telaCalculadora {
+  width: 350px;
+  height: 30%;
+  background-color: #fecaca;
+  border-radius: 30px;
+}
+#telaMenor {
+  width: 100%;
+  height: 30%;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  background-color: black;
+}
