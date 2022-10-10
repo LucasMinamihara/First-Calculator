@@ -23,12 +23,54 @@ body {
   width: 350px;
   height: 30%;
   background-color: #fecaca;
-  border-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 #telaMenor {
   width: 100%;
   height: 30%;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
-  background-color: black;
+  font-size: 14px;
+  text-align: right;
+  padding: 20px;
+}
+#telaMaior {
+  font-size: 32px;
+  width: 100%;
+  height: 70%;
+  padding: 30px;
+}
+
+/* Corpo Números calculadora */
+#corpoNumeros {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.num {
+  font-size: 32px;
+  margin: 30px;
+  padding: 10px;
+  cursor: pointer;
+}
+.zero {
+  position: absolute;
+  top: 415px;
+  left: 75px;
+}
+#corpoOperacoes {
+  font-size: 20px;
+  margin: 30px;
+  cursor: pointer;
+}
+.borda {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  color: #ffffffff;
+  margin: 5px;
+  border-radius: 100%;
+  padding: 10px;
 }
