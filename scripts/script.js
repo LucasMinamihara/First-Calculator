@@ -1,3 +1,6 @@
+let fazerEquacao = false;
+let valorDigitado = 0;
+
 // Manipulando o DOM
 let btnOp = document.querySelectorAll(".btnOp");
 const nums = document.querySelectorAll(".num");
@@ -19,6 +22,7 @@ const calculadora = {
   subtrair: subtrair(),
   mult: dividir(),
   divi: multiplicar(),
+  res: resultado,
 };
 
 nums.forEach((num) => {
@@ -35,9 +39,13 @@ btnOp.forEach((cadaBotao) => {
 function conferir() {
   if (!equacao) return;
   telaMenor.textContent += telaMaior.textContent + ` ${this.textContent} `;
-  telaMaior.textContent = "";
   calculadora.equacao.push(equacao);
-  telaMaior.textContent = "";
+  calculadora.equacao.push(this.textContent);
+  telaMaior.textContent = "0";
   equacao = "";
-  //   console.log(calculadora.equacao);
+  operacao(this.textContent);
+}
+
+function operacao(sinal) {
+  
 }

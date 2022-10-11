@@ -66,10 +66,9 @@ body {
   cursor: pointer;
 }
 .borda {
-  border: 1px solid black;
   padding: 5px;
   text-align: center;
-  color: #ffffffff;
+  color: #000;
   margin: 5px;
   border-radius: 100%;
   padding: 10px;

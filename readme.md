@@ -11,5 +11,5 @@ para a tera primaria (tela de cima) (feito)
 ##identificar as operações matemáticas que estão sendo requisitas
 ##Fazer a operação com base nos valores armazenados na equação da calculadora
 
-
+##Tentando resolver o problema de priorização na hora de realizar a operação matemática
 
