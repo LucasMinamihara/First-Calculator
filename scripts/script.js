@@ -11,22 +11,17 @@ const telaMenor = document.querySelector("#telaMenor");
 
 // Criando variáveis
 let equacao = "";
-
-// Importanto as operações matemáticas
-import { soma, subtrair, dividir, multiplicar } from "./operacoes.js";
+let resultado = 0;
+let equacaoInteira = "";
 
 // Criando minha calculadora em forma de objeto
 const calculadora = {
   equacao: [],
-  somar: soma(),
-  subtrair: subtrair(),
-  mult: dividir(),
-  divi: multiplicar(),
-  res: resultado,
 };
 
 nums.forEach((num) => {
   num.addEventListener("click", () => {
+    if (telaMenor.textContent.includes("ans")) telaMenor.textContent = "";
     equacao += num.textContent;
     passarParaTela(equacao, telaMaior);
   });
@@ -43,9 +38,24 @@ function conferir() {
   calculadora.equacao.push(this.textContent);
   telaMaior.textContent = "0";
   equacao = "";
-  operacao(this.textContent);
+  if (this.textContent == "=") {
+    operacao();
+  }
 }
 
-function operacao(sinal) {
-  
+function operacao() {
+  calculadora.equacao.forEach((cadaValor) => {
+    if (cadaValor == "=") return;
+    equacaoInteira += cadaValor;
+  });
+  console.log(equacaoInteira);
+  resultado = eval(equacaoInteira);
+  telaMenor.textContent = `ans ${resultado}`;
+  limparCalculadora();
+}
+
+function limparCalculadora() {
+  calculadora.equacao = [];
+  resultado = 0;
+  equacaoInteira = "";
 }
